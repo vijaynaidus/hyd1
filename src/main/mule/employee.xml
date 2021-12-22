@@ -175,7 +175,8 @@ payload]]></ee:set-payload>
 		</ee:transform>
     </flow>
     <flow name="post:\createmployee:application\json:employee-config">
-        <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+        <logger level="INFO" doc:name="Logger" doc:id="47013088-6530-4482-a068-62813a24b989" message="start"/>
+		<ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
             <ee:message>
                 <ee:set-payload><![CDATA[%dw 2.0
 output application/json
@@ -185,5 +186,6 @@ output application/json
 }]]></ee:set-payload>
             </ee:message>
         </ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="dbcd6a69-bee6-4693-86ef-2ae29f45d452" message="end"/>
     </flow>
 </mule>
